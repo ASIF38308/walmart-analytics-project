@@ -1,0 +1,17 @@
+category_id,department,category,subcategory
+1,Electronics,Mobile Phones,Smartphones
+2,Electronics,Mobile Phones,Feature Phones
+3,Electronics,Computers,Laptops
+4,Electronics,Computers,Desktops
+5,Fashion,Men,Shirts
+6,Fashion,Men,Jeans
+7,Fashion,Women,Dresses
+8,Fashion,Women,Footwear
+9,Groceries,Food,Snacks
+10,Groceries,Food,Beverages
+11,Groceries,Dairy,Milk
+12,Groceries,Dairy,Cheese
+13,Home,Furniture,Beds
+14,Home,Furniture,Sofas
+15,Home,Kitchen,Cookware
+16,Home,Kitchen,Storage

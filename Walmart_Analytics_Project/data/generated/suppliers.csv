@@ -1,0 +1,101 @@
+supplier_id,supplier_name,city,state,contact_person,email,phone,rating,lead_time_days
+1,Bava-Sahota,Anand,Maharashtra,Samaksh D’Alia,ramanathanayushman@example.com,02295072926,5,15
+2,"Koshy, Pant and Hari",Chandrapur,Meghalaya,Hemangini Amble,tdass@example.com,00169574219,5,7
+3,"Chaudhry, Verma and Kala",Burhanpur,Tamil Nadu,Tanvi Guha,jsolanki@example.org,00303941142,4,5
+4,Dara-Pathak,Amravati,Assam,Ayushman Subramaniam,cbhasin@example.com,+915932312062,5,14
+5,Singhal Ltd,Thane,Karnataka,Gaurika Dhillon,sbawa@example.com,+915499010573,3,3
+6,"Khare, Naik and Mand",Alwar,Kerala,Lavanya Nigam,aadimuni@example.net,0022119250,4,10
+7,Raju-Sabharwal,Etawah,Chhattisgarh,Abeer Kumer,babulaban@example.com,+919218254214,3,8
+8,Sarma-Raju,Silchar,Meghalaya,Gavin Purohit,khannakai@example.net,+912980168833,3,2
+9,Krish Ltd,Kadapa,Sikkim,Samarth Sekhon,gardeoscar@example.net,6044925622,4,10
+10,Som-Banik,Bhimavaram,West Bengal,Neha Dara,bahadurjit45@example.net,+911586877042,3,13
+11,Choudhary-Jaggi,Firozabad,Haryana,Ekta Kapadia,leena91@example.net,00312649137,3,3
+12,Lalla-Vala,Ambattur,Tamil Nadu,Jairaj Joshi,ishitakarnik@example.com,06163817496,5,8
+13,Suresh-Suri,Bilaspur,Tamil Nadu,Rachita Barad,amairamani@example.com,+918164919365,4,11
+14,Yadav-Sarma,Giridih,Haryana,Bhavika Dave,upma68@example.net,+917045220717,4,4
+15,Chauhan-Raghavan,Ambarnath,Sikkim,Warda Cheema,pmore@example.net,7474745144,4,11
+16,Choudhury-Verma,Dewas,Maharashtra,Anita Ray,santmax@example.com,6651299885,5,4
+17,"Boase, Varma and Bir",Khammam,Jharkhand,Fariq Sampath,zayan93@example.org,+919335113834,4,3
+18,"Master, Johal and Swaminathan",Baranagar,West Bengal,Eiravati Mohan,narayanjackson@example.com,05215742995,5,15
+19,Sachdev PLC,Malegaon,Odisha,Jeet Naidu,mgupta@example.net,0037987722,5,15
+20,Om-Dhar,Amritsar,Mizoram,Shivani Brar,xbhattacharyya@example.org,04786235108,3,8
+21,Shukla-Behl,Tinsukia,Uttarakhand,Urvashi Gour,arinbhandari@example.org,3104629567,4,8
+22,"Kakar, Ahuja and Dar",Sirsa,Chhattisgarh,Timothy Jani,vedakonda@example.org,07428712542,3,3
+23,Madan-Chokshi,Akola,Maharashtra,Eta Chakraborty,dhawanfalan@example.com,+913306740720,4,14
+24,"Shankar, Dani and Ratta",Srinagar,Tamil Nadu,Zehaan Vasa,yashoda03@example.org,+914833396003,5,6
+25,"Mangal, Kurian and Gara",Aurangabad,Goa,Nidra Ghosh,tripti57@example.com,1905869962,5,11
+26,Sarraf PLC,Rohtak,Assam,Isaac Sarin,daksheshvala@example.org,3190991554,3,2
+27,Padmanabhan-Dada,Begusarai,Kerala,Yashoda Sachar,dhruv18@example.net,05512418878,3,15
+28,"Saxena, Kanda and Seshadri",Gaya,Bihar,Shaurya Bala,murtybaljiwan@example.org,6652933182,3,9
+29,Panchal-Kulkarni,Karawal Nagar,Uttarakhand,Aadhya More,yashvigaba@example.net,07214202370,3,10
+30,Dutt PLC,Satna,Goa,Chanchal Mangal,prishababu@example.com,08392611537,3,12
+31,Dhar PLC,Loni,Chhattisgarh,Irya Kurian,gargshivani@example.net,+912913026557,4,12
+32,Pathak LLC,Mumbai,Sikkim,Neha Bir,iyengararadhana@example.com,+916206873837,5,7
+33,Buch Group,Narasaraopet,Uttar Pradesh,Isaiah Solanki,prisha72@example.org,+919153183383,3,9
+34,"Sibal, Ramanathan and Chandran",Vijayanagaram,Haryana,Advik Krishnamurthy,sachi68@example.org,3731607624,5,11
+35,Dyal Group,Pimpri-Chinchwad,Tripura,Vasana Kara,azadsur@example.org,06895399003,3,13
+36,Shah PLC,Patna,Tamil Nadu,Zarna Verma,zashil57@example.com,02705973171,4,7
+37,Wagle-Chander,Durgapur,Andhra Pradesh,Eshana Sahni,ckrishnamurthy@example.com,3253484722,5,5
+38,"Rastogi, Kala and Kale",Kavali,Karnataka,Rohan Srivastava,jason85@example.net,+917715093993,4,9
+39,"Naik, Sura and Anne",Bharatpur,Andhra Pradesh,Shravya Som,avilad@example.net,+913750407385,3,2
+40,"Krish, Baral and Kade",Vasai-Virar,Maharashtra,Chaitanya Mani,deshpandeyutika@example.com,00779173279,3,10
+41,Khanna-Viswanathan,Agra,Rajasthan,Meghana Rajagopalan,raksha87@example.com,2545560540,4,14
+42,Wagle PLC,Kochi,Haryana,Indira Purohit,sudikshade@example.org,04595185434,4,4
+43,Hora Ltd,Mango,Assam,Zehaan Zacharia,rthaker@example.net,+910087078382,3,11
+44,Bath-Chacko,Khammam,Haryana,Leela Handa,hemaninigam@example.org,06155094653,3,14
+45,Zachariah-Thaker,Ramagundam,Maharashtra,Aishani Mittal,krishna50@example.net,+910262130872,3,12
+46,Lad PLC,Jalandhar,Uttarakhand,Farhan Din,hardikkunda@example.com,0239580337,3,10
+47,Randhawa-Pau,Hazaribagh,West Bengal,Krisha Malhotra,varsha13@example.com,+914845083039,5,15
+48,Sur Inc,Thiruvananthapuram,Punjab,Kashish Patla,pandeyaayush@example.net,3524342721,3,4
+49,Narain-Keer,Chapra,Tamil Nadu,Siya Goyal,yutika59@example.com,0701726826,5,15
+50,Rattan-Dave,Visakhapatnam,Assam,Pranav Mutti,jeremiahthaman@example.com,+911937576636,4,10
+51,"Barad, Wadhwa and Ranganathan",Latur,Uttar Pradesh,Matthew Upadhyay,warinderpalan@example.org,6319230534,4,14
+52,Kalla LLC,Dibrugarh,Odisha,Pahal Biswas,kashyapwarjas@example.net,+914994605277,3,14
+53,"Oak, Sandal and Behl",Erode,Meghalaya,Sanya Agrawal,hdua@example.org,5945235771,3,14
+54,Wali LLC,Karawal Nagar,Odisha,Ekta Garg,lohit14@example.net,+910412183142,4,12
+55,Mane Group,Gurgaon,Meghalaya,Samarth Balan,naikagastya@example.net,+916949785687,4,6
+56,Kaur-Chadha,Warangal,Goa,Ekapad Nigam,kadeedhitha@example.net,6377545300,3,8
+57,Khurana-Datta,Suryapet,Manipur,Raghav Anne,tripti23@example.net,4602006352,4,2
+58,Majumdar Group,Kochi,Uttarakhand,Yashasvi Oak,maanascomar@example.net,1305340723,5,7
+59,Bobal-Sankaran,Karaikudi,Arunachal Pradesh,Bhavini Sen,handaamaira@example.org,6396729082,4,12
+60,"Krishna, Char and Mann",Proddatur,Gujarat,Bhavika Vora,anirudhbandi@example.com,1565443709,4,8
+61,Mani-Master,Medininagar,Arunachal Pradesh,Falguni Kalita,fkonda@example.org,+918990027072,4,7
+62,Agate Group,Malegaon,Goa,Varsha Goswami,falan95@example.net,07831789906,5,12
+63,Contractor Inc,Fatehpur,Rajasthan,Samar Kaul,sarinbhavya@example.org,02858037039,5,12
+64,Issac-Devi,Faridabad,Odisha,Panini Vohra,ebalay@example.net,5431539774,3,8
+65,Sahni-Keer,Guntur,Gujarat,Jalsa Iyengar,ohora@example.com,05909416400,5,11
+66,Choudhury-Devi,Orai,West Bengal,Ansh Bumb,damyanti67@example.org,8422758273,5,4
+67,Kapoor-Srivastava,Fatehpur,Tripura,Yashawini Mishra,nagarajannoah@example.net,2170196919,4,7
+68,Prabhakar-Hegde,Dewas,Karnataka,Chaitaly Sachdeva,mmagar@example.org,06474853738,5,5
+69,Raju-Kamdar,Firozabad,West Bengal,Saumya Babu,hegdejyoti@example.net,6304415538,4,11
+70,Srivastava-Chhabra,Kanpur,Meghalaya,Guneet Mistry,yashasvi19@example.net,3573886783,4,15
+71,"Seth, Ravel and Bath",Satara,Karnataka,Sara Wable,aryaimaran@example.com,+918740525983,5,2
+72,Kalita-Wagle,Nandyal,Sikkim,Lipika Boase,alka12@example.com,08866421998,5,7
+73,"Shukla, Hegde and Shankar",Jhansi,Karnataka,Hamsini Dalal,jtiwari@example.com,03304977095,5,14
+74,Ganesan-Bedi,Akola,Uttarakhand,Ishanvi Sanghvi,daveikshita@example.com,+913092911594,5,6
+75,"More, Barad and Chaudry",Bettiah,Nagaland,Robert Dubey,yadavronith@example.net,02771521573,5,6
+76,Master-Shetty,Kurnool,Telangana,Aradhana Sawhney,rishi41@example.com,0081117225,3,13
+77,Narayan Ltd,New Delhi,Tripura,Watika Chhabra,isom@example.net,07198787915,3,5
+78,"Merchant, Kala and Srinivas",Surat,Arunachal Pradesh,Ridhi Golla,zachariaurmi@example.org,+910827389473,3,14
+79,Mallick LLC,Suryapet,Arunachal Pradesh,Forum Kunda,nicholasthaman@example.org,+915761100798,5,12
+80,"Baral, Kuruvilla and Ramakrishnan",Morena,Tamil Nadu,William Chakrabarti,tchaudhari@example.net,02279760491,4,2
+81,"Rao, Banik and Swamy",Madhyamgram,Uttarakhand,Anmol Kumar,teerth89@example.org,05562801623,5,8
+82,Oommen LLC,Bhalswa Jahangir Pur,Uttarakhand,Rachana Bawa,guneet19@example.org,6674607485,3,2
+83,"Kashyap, Shanker and Bhasin",Avadi,Himachal Pradesh,Eiravati Datta,parikhadvika@example.com,+912622206543,5,4
+84,"Mand, Guha and Boase",Vellore,Tamil Nadu,Jacob Brar,qushi91@example.org,08351576653,4,15
+85,Andra PLC,Hajipur,Madhya Pradesh,Lajita Subramaniam,ikothari@example.org,08728743226,3,3
+86,Pingle Ltd,Belgaum,Tripura,Gauri Madan,ddugal@example.org,+913399822938,3,9
+87,Sharma PLC,Suryapet,Telangana,Omya Chauhan,darsh10@example.org,6920268097,4,8
+88,"Bhandari, Warrior and Bora",Sagar,West Bengal,Aarush Hegde,obasu@example.org,+910290026926,4,4
+89,Brar-Dutt,Gaya,Jharkhand,Farhan Date,mdeep@example.org,+915173110642,3,12
+90,Sundaram Inc,Malda,Sikkim,Yasti Chacko,aashidara@example.com,6488705197,4,8
+91,Viswanathan and Sons,Panipat,Arunachal Pradesh,Jagrati Mani,sidhuisha@example.org,+917183116075,4,2
+92,Dhawan LLC,Kochi,Andhra Pradesh,Utkarsh Mahajan,grattan@example.com,4171498500,5,8
+93,Master-Narula,Dhule,Manipur,Omkaar Puri,choudhuryzansi@example.net,+912467677313,3,3
+94,"Sharma, Dubey and Thakur",Bhagalpur,Goa,Gaurangi Luthra,varughesefaraj@example.net,04563204129,3,15
+95,Narayan-Varkey,Jammu,Tripura,Qushi Batta,gauravtrivedi@example.com,7294661542,4,3
+96,"Bhattacharyya, Pathak and Issac",Ranchi,Rajasthan,Dakshesh Tella,saksham61@example.net,+914913597324,3,6
+97,"Bedi, Dar and Date",Tiruppur,Chhattisgarh,Sudiksha Choudhury,tbera@example.com,2356856448,4,8
+98,Dara LLC,Jamshedpur,Manipur,Mohammed Dayal,bwason@example.org,4884856836,5,10
+99,"Nagarajan, Deo and Dube",Panchkula,West Bengal,Chatresh Chad,waida63@example.net,3389183679,3,7
+100,"Karan, Babu and Gupta",Anantapur,Haryana,Zarna Uppal,aradhana86@example.com,00858060076,5,4

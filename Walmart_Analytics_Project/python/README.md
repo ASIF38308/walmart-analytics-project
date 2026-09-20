@@ -1,0 +1,1 @@
+Run: python3 generate_stores.py then python3 generate_warehouses.py

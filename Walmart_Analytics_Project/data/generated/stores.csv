@@ -1,0 +1,101 @@
+store_id,store_name,city,state,region,opening_date,store_size_sqft,manager_name,phone,email,status
+1,Walmart Chennai Store 001,Chennai,Tamil Nadu,South,2017-11-20,76237,Manbir Mani,5284780643,store1@walmartdemo.com,Active
+2,Walmart Bengaluru Store 002,Bengaluru,Karnataka,South,2013-01-18,78089,Bhavya Kale,+910253663768,store2@walmartdemo.com,Active
+3,Walmart Delhi Store 003,Delhi,Delhi,North,2016-04-16,95463,Nihal Grewal,+916814650309,store3@walmartdemo.com,Active
+4,Walmart Hyderabad Store 004,Hyderabad,Telangana,South,2011-07-28,38516,Jacob Narain,1213447661,store4@walmartdemo.com,Active
+5,Walmart Chennai Store 005,Chennai,Tamil Nadu,South,2025-01-08,71518,Mitesh Buch,+918662087258,store5@walmartdemo.com,Active
+6,Walmart Chennai Store 006,Chennai,Tamil Nadu,South,2023-04-20,72587,Krishna Baria,+914427390379,store6@walmartdemo.com,Active
+7,Walmart Bengaluru Store 007,Bengaluru,Karnataka,South,2019-03-05,95784,Turvi Sehgal,+913222914252,store7@walmartdemo.com,Active
+8,Walmart Kolkata Store 008,Kolkata,West Bengal,East,2021-12-22,61730,Jack Rajagopal,+910970500520,store8@walmartdemo.com,Active
+9,Walmart Kolkata Store 009,Kolkata,West Bengal,East,2023-07-01,90521,Dev Jain,9942873519,store9@walmartdemo.com,Active
+10,Walmart Chennai Store 010,Chennai,Tamil Nadu,South,2020-01-23,55409,Vamakshi Babu,08417729072,store10@walmartdemo.com,Active
+11,Walmart Mumbai Store 011,Mumbai,Maharashtra,West,2020-01-26,38842,Tamanna Batra,00680514453,store11@walmartdemo.com,Active
+12,Walmart Delhi Store 012,Delhi,Delhi,North,2013-11-23,70699,Praneel Khurana,+919621170647,store12@walmartdemo.com,Active
+13,Walmart Bengaluru Store 013,Bengaluru,Karnataka,South,2012-08-12,59315,Harish Pillai,+910837541808,store13@walmartdemo.com,Active
+14,Walmart Mumbai Store 014,Mumbai,Maharashtra,West,2025-04-27,58640,Jack Mahal,7434008767,store14@walmartdemo.com,Active
+15,Walmart Hyderabad Store 015,Hyderabad,Telangana,South,2026-07-03,66150,Avi Bir,0720184721,store15@walmartdemo.com,Active
+16,Walmart Chennai Store 016,Chennai,Tamil Nadu,South,2019-07-16,58983,Tanish Kanda,08432093609,store16@walmartdemo.com,Active
+17,Walmart Delhi Store 017,Delhi,Delhi,North,2013-11-17,55760,Charvi Mani,+919445284098,store17@walmartdemo.com,Active
+18,Walmart Chennai Store 018,Chennai,Tamil Nadu,South,2023-03-03,48081,Veer Mohanty,+918848431299,store18@walmartdemo.com,Active
+19,Walmart Mumbai Store 019,Mumbai,Maharashtra,West,2012-04-06,53586,Ishwar Singhal,+914764255158,store19@walmartdemo.com,Active
+20,Walmart Chennai Store 020,Chennai,Tamil Nadu,South,2024-02-26,30442,Ayush Zacharia,0163030432,store20@walmartdemo.com,Active
+21,Walmart Delhi Store 021,Delhi,Delhi,North,2015-01-13,60481,Mekhala Mahajan,09530442542,store21@walmartdemo.com,Active
+22,Walmart Bengaluru Store 022,Bengaluru,Karnataka,South,2017-07-26,96232,Onveer Chaudhary,+911677224198,store22@walmartdemo.com,Active
+23,Walmart Hyderabad Store 023,Hyderabad,Telangana,South,2019-03-03,97638,Zehaan Gokhale,3797375018,store23@walmartdemo.com,Active
+24,Walmart Hyderabad Store 024,Hyderabad,Telangana,South,2026-03-23,22765,Jeevika Dugal,07401881251,store24@walmartdemo.com,Active
+25,Walmart Mumbai Store 025,Mumbai,Maharashtra,West,2022-08-29,63312,Ubika Solanki,03516262560,store25@walmartdemo.com,Active
+26,Walmart Mumbai Store 026,Mumbai,Maharashtra,West,2014-01-24,52490,Garima Peri,05188745605,store26@walmartdemo.com,Active
+27,Walmart Kolkata Store 027,Kolkata,West Bengal,East,2018-04-21,99401,Nisha Lalla,+915335693465,store27@walmartdemo.com,Active
+28,Walmart Bengaluru Store 028,Bengaluru,Karnataka,South,2022-11-07,72788,Finn Uppal,07624463185,store28@walmartdemo.com,Active
+29,Walmart Delhi Store 029,Delhi,Delhi,North,2024-02-21,99953,Andrew Kothari,+917767157132,store29@walmartdemo.com,Active
+30,Walmart Chennai Store 030,Chennai,Tamil Nadu,South,2013-05-29,63374,Praneel Kaul,05146280449,store30@walmartdemo.com,Active
+31,Walmart Bengaluru Store 031,Bengaluru,Karnataka,South,2025-08-14,63788,Neelima Agarwal,08975762292,store31@walmartdemo.com,Active
+32,Walmart Mumbai Store 032,Mumbai,Maharashtra,West,2024-08-01,83153,Manbir Krishnan,+918117701776,store32@walmartdemo.com,Active
+33,Walmart Delhi Store 033,Delhi,Delhi,North,2026-03-26,77970,Lekha Swamy,1715770398,store33@walmartdemo.com,Active
+34,Walmart Bengaluru Store 034,Bengaluru,Karnataka,South,2022-03-28,59902,Hiral Chawla,04450661076,store34@walmartdemo.com,Active
+35,Walmart Delhi Store 035,Delhi,Delhi,North,2026-04-28,81425,Ishanvi Upadhyay,2030678424,store35@walmartdemo.com,Active
+36,Walmart Kolkata Store 036,Kolkata,West Bengal,East,2017-09-30,36618,Thomas Basu,7373875871,store36@walmartdemo.com,Active
+37,Walmart Delhi Store 037,Delhi,Delhi,North,2025-04-07,39605,Arunima Saraf,01454707877,store37@walmartdemo.com,Active
+38,Walmart Delhi Store 038,Delhi,Delhi,North,2025-12-31,68537,Brijesh Sura,03861807768,store38@walmartdemo.com,Active
+39,Walmart Hyderabad Store 039,Hyderabad,Telangana,South,2024-03-17,77727,Fitan Merchant,+910392752891,store39@walmartdemo.com,Active
+40,Walmart Chennai Store 040,Chennai,Tamil Nadu,South,2017-05-30,71086,Om Tailor,+910577448162,store40@walmartdemo.com,Active
+41,Walmart Delhi Store 041,Delhi,Delhi,North,2015-06-04,62991,Quincy Korpal,07069321861,store41@walmartdemo.com,Active
+42,Walmart Hyderabad Store 042,Hyderabad,Telangana,South,2017-03-17,54374,Amrita Lanka,09831843699,store42@walmartdemo.com,Active
+43,Walmart Kolkata Store 043,Kolkata,West Bengal,East,2022-08-27,97097,Eesha Dube,+911075768188,store43@walmartdemo.com,Active
+44,Walmart Bengaluru Store 044,Bengaluru,Karnataka,South,2012-03-28,45494,Saksham Som,02230793837,store44@walmartdemo.com,Active
+45,Walmart Chennai Store 045,Chennai,Tamil Nadu,South,2017-06-28,60188,Teerth Manne,+910619076651,store45@walmartdemo.com,Active
+46,Walmart Chennai Store 046,Chennai,Tamil Nadu,South,2024-08-09,43401,Inaya Mishra,3995610645,store46@walmartdemo.com,Active
+47,Walmart Mumbai Store 047,Mumbai,Maharashtra,West,2017-07-14,50844,Vasana Ray,6393448144,store47@walmartdemo.com,Active
+48,Walmart Mumbai Store 048,Mumbai,Maharashtra,West,2017-10-28,98251,Upasna Kaul,7965774814,store48@walmartdemo.com,Active
+49,Walmart Kolkata Store 049,Kolkata,West Bengal,East,2019-05-19,36785,Veda Date,04683942927,store49@walmartdemo.com,Active
+50,Walmart Delhi Store 050,Delhi,Delhi,North,2017-03-30,60523,Ansh Nagy,8146973941,store50@walmartdemo.com,Active
+51,Walmart Kolkata Store 051,Kolkata,West Bengal,East,2015-10-15,85471,Champak Kohli,2888140326,store51@walmartdemo.com,Active
+52,Walmart Chennai Store 052,Chennai,Tamil Nadu,South,2014-09-26,50325,Zarna Ghose,+916654750559,store52@walmartdemo.com,Active
+53,Walmart Chennai Store 053,Chennai,Tamil Nadu,South,2023-06-13,84582,Rudra Gupta,4131883505,store53@walmartdemo.com,Active
+54,Walmart Bengaluru Store 054,Bengaluru,Karnataka,South,2020-09-09,28071,Brinda Chokshi,04063640236,store54@walmartdemo.com,Active
+55,Walmart Delhi Store 055,Delhi,Delhi,North,2024-04-20,70181,Raghav Deshpande,7164709938,store55@walmartdemo.com,Active
+56,Walmart Bengaluru Store 056,Bengaluru,Karnataka,South,2017-05-20,60482,Jairaj Dalal,+918678940864,store56@walmartdemo.com,Active
+57,Walmart Hyderabad Store 057,Hyderabad,Telangana,South,2022-01-10,86664,Yamini Puri,+917000058731,store57@walmartdemo.com,Active
+58,Walmart Kolkata Store 058,Kolkata,West Bengal,East,2018-06-16,92859,Azad Dutt,+910664859106,store58@walmartdemo.com,Active
+59,Walmart Chennai Store 059,Chennai,Tamil Nadu,South,2012-01-15,27505,Lakshit Krishna,2954869002,store59@walmartdemo.com,Active
+60,Walmart Hyderabad Store 060,Hyderabad,Telangana,South,2014-03-09,92742,Chakrika Nagi,2134470561,store60@walmartdemo.com,Active
+61,Walmart Bengaluru Store 061,Bengaluru,Karnataka,South,2019-07-14,69081,Chandran Minhas,+917042396938,store61@walmartdemo.com,Active
+62,Walmart Delhi Store 062,Delhi,Delhi,North,2020-08-05,94164,Sudiksha Chopra,+918277835990,store62@walmartdemo.com,Active
+63,Walmart Delhi Store 063,Delhi,Delhi,North,2011-07-25,20027,Vamakshi Raju,0018863047,store63@walmartdemo.com,Active
+64,Walmart Mumbai Store 064,Mumbai,Maharashtra,West,2014-03-20,25651,Wakeeta Karnik,+917095754004,store64@walmartdemo.com,Active
+65,Walmart Kolkata Store 065,Kolkata,West Bengal,East,2013-06-01,82756,Samar Baral,9165057192,store65@walmartdemo.com,Active
+66,Walmart Delhi Store 066,Delhi,Delhi,North,2017-01-05,67237,Utkarsh Sharaf,6225929351,store66@walmartdemo.com,Active
+67,Walmart Hyderabad Store 067,Hyderabad,Telangana,South,2015-09-21,86920,Eesha Sandal,08297245431,store67@walmartdemo.com,Active
+68,Walmart Hyderabad Store 068,Hyderabad,Telangana,South,2021-08-24,39337,Aishani Modi,08082354622,store68@walmartdemo.com,Active
+69,Walmart Bengaluru Store 069,Bengaluru,Karnataka,South,2012-08-28,26711,Ijaya Morar,+917775048786,store69@walmartdemo.com,Active
+70,Walmart Hyderabad Store 070,Hyderabad,Telangana,South,2023-05-02,42380,Nihal Parmar,+912537066012,store70@walmartdemo.com,Active
+71,Walmart Bengaluru Store 071,Bengaluru,Karnataka,South,2022-10-06,63537,Timothy Iyer,5357984527,store71@walmartdemo.com,Active
+72,Walmart Bengaluru Store 072,Bengaluru,Karnataka,South,2016-03-02,72783,Bhavna Savant,02241192540,store72@walmartdemo.com,Active
+73,Walmart Kolkata Store 073,Kolkata,West Bengal,East,2019-08-15,37947,Gavin Ahluwalia,+912134671564,store73@walmartdemo.com,Active
+74,Walmart Mumbai Store 074,Mumbai,Maharashtra,West,2011-10-05,97975,Ojas Lalla,4660886241,store74@walmartdemo.com,Active
+75,Walmart Delhi Store 075,Delhi,Delhi,North,2020-06-18,47687,Luke Sura,08250839985,store75@walmartdemo.com,Active
+76,Walmart Hyderabad Store 076,Hyderabad,Telangana,South,2025-07-11,94309,Azaan Mammen,02672506427,store76@walmartdemo.com,Active
+77,Walmart Bengaluru Store 077,Bengaluru,Karnataka,South,2012-07-13,62015,Ojasvi Verma,5522778521,store77@walmartdemo.com,Active
+78,Walmart Mumbai Store 078,Mumbai,Maharashtra,West,2017-06-28,22170,Zilmil Dyal,5707509030,store78@walmartdemo.com,Active
+79,Walmart Mumbai Store 079,Mumbai,Maharashtra,West,2025-09-20,46271,Ekantika Ramachandran,+914840843347,store79@walmartdemo.com,Active
+80,Walmart Mumbai Store 080,Mumbai,Maharashtra,West,2024-07-10,23864,Mekhala Oommen,03041545498,store80@walmartdemo.com,Active
+81,Walmart Bengaluru Store 081,Bengaluru,Karnataka,South,2017-06-11,82532,Chaman Rama,07077446513,store81@walmartdemo.com,Active
+82,Walmart Bengaluru Store 082,Bengaluru,Karnataka,South,2015-10-18,62688,Caleb Goda,02921605837,store82@walmartdemo.com,Active
+83,Walmart Kolkata Store 083,Kolkata,West Bengal,East,2017-10-13,31039,Vedhika Singh,+914920333747,store83@walmartdemo.com,Active
+84,Walmart Hyderabad Store 084,Hyderabad,Telangana,South,2023-04-09,92534,Chakradhar Korpal,+914569657826,store84@walmartdemo.com,Active
+85,Walmart Hyderabad Store 085,Hyderabad,Telangana,South,2018-06-13,57453,Krish Oza,02791201529,store85@walmartdemo.com,Active
+86,Walmart Chennai Store 086,Chennai,Tamil Nadu,South,2015-04-03,68420,Girik Raval,08246513341,store86@walmartdemo.com,Active
+87,Walmart Bengaluru Store 087,Bengaluru,Karnataka,South,2017-05-14,97944,Faraj Parsa,2109921651,store87@walmartdemo.com,Active
+88,Walmart Delhi Store 088,Delhi,Delhi,North,2016-12-22,79555,Anthony Baral,01823537964,store88@walmartdemo.com,Active
+89,Walmart Chennai Store 089,Chennai,Tamil Nadu,South,2025-04-06,38077,Bachittar Brar,+914923386001,store89@walmartdemo.com,Active
+90,Walmart Delhi Store 090,Delhi,Delhi,North,2023-09-15,51962,Netra Sood,06571380957,store90@walmartdemo.com,Active
+91,Walmart Delhi Store 091,Delhi,Delhi,North,2012-09-01,23384,Gavin Wagle,+914884447353,store91@walmartdemo.com,Active
+92,Walmart Mumbai Store 092,Mumbai,Maharashtra,West,2019-08-23,33363,Daksha Khosla,03589670148,store92@walmartdemo.com,Active
+93,Walmart Kolkata Store 093,Kolkata,West Bengal,East,2014-01-08,52017,Kavya Minhas,+916058855686,store93@walmartdemo.com,Active
+94,Walmart Chennai Store 094,Chennai,Tamil Nadu,South,2023-12-11,34287,Tristan Batta,+914109685917,store94@walmartdemo.com,Active
+95,Walmart Chennai Store 095,Chennai,Tamil Nadu,South,2022-05-08,39059,Lekha Rajan,07561829346,store95@walmartdemo.com,Active
+96,Walmart Hyderabad Store 096,Hyderabad,Telangana,South,2012-11-14,89882,Bina Dutt,2817760507,store96@walmartdemo.com,Active
+97,Walmart Mumbai Store 097,Mumbai,Maharashtra,West,2017-09-05,87151,Tripti Cherian,5053612301,store97@walmartdemo.com,Active
+98,Walmart Bengaluru Store 098,Bengaluru,Karnataka,South,2024-04-19,47021,Sarthak Master,+916317381906,store98@walmartdemo.com,Active
+99,Walmart Hyderabad Store 099,Hyderabad,Telangana,South,2012-08-21,40913,Eesha Hora,3275122690,store99@walmartdemo.com,Active
+100,Walmart Hyderabad Store 100,Hyderabad,Telangana,South,2024-04-01,75397,Neelima Bora,+919051660731,store100@walmartdemo.com,Active

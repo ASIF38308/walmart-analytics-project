@@ -1,0 +1,21 @@
+warehouse_id,warehouse_name,city,state,region,capacity,manager_name,phone
+1,North DC-01,Delhi,Delhi,North,904916,Amol Merchant,01377036693
+2,North DC-02,Delhi,Delhi,North,280126,Udarsh Narasimhan,8867761496
+3,West DC-03,Mumbai,Maharashtra,West,633734,Panini Dhar,09038862907
+4,South DC-04,Hyderabad,Telangana,South,535201,Shivani Yohannan,+917365318827
+5,North DC-05,Delhi,Delhi,North,840170,Gagan Grewal,4165285661
+6,North DC-06,Delhi,Delhi,North,692683,Unni Sant,+911085909377
+7,West DC-07,Mumbai,Maharashtra,West,588823,Dalbir Koshy,1934518118
+8,South DC-08,Bengaluru,Karnataka,South,251486,Rushil Barad,3523042234
+9,North DC-09,Delhi,Delhi,North,701728,Christopher Verma,9196507349
+10,South DC-10,Bengaluru,Karnataka,South,174902,Tejas Chand,06097952761
+11,North DC-11,Delhi,Delhi,North,374934,Brijesh Madan,+913319624912
+12,West DC-12,Mumbai,Maharashtra,West,915673,Ekansh Boase,+916310427008
+13,North DC-13,Delhi,Delhi,North,627503,Janaki Muni,7040386938
+14,South DC-14,Bengaluru,Karnataka,South,294477,Ati Bhatnagar,3699619049
+15,West DC-15,Mumbai,Maharashtra,West,337446,Advik Chander,05216351844
+16,South DC-16,Hyderabad,Telangana,South,132538,Ishaan Shanker,9305002307
+17,West DC-17,Mumbai,Maharashtra,West,945361,Rachita Sarna,+917102429942
+18,North DC-18,Delhi,Delhi,North,182448,Ojas Mammen,3317472915
+19,South DC-19,Bengaluru,Karnataka,South,178321,Amruta Palla,6721711761
+20,West DC-20,Mumbai,Maharashtra,West,546215,Ishanvi Doctor,07469503558

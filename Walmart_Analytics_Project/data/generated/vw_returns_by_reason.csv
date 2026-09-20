@@ -1,0 +1,6 @@
+return_reason,return_count,total_refunded,avg_refund
+"Customer Changed Mind",1581,21240090.93,13434.59
+"Wrong Product",1468,19668097.89,13397.89
+"Late Delivery",1490,20405225.55,13694.78
+"Quality Issue",1536,21045951.69,13701.79
+Damaged,1425,19458179.65,13654.86

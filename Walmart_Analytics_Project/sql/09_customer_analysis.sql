@@ -1,0 +1,899 @@
+/*
+=========================================================
+Project : Walmart Retail Analytics
+File    : 09_customer_analysis.sql
+Purpose : Customer Analytics
+=========================================================
+*/
+
+USE walmart_analytics;
+
+-- =====================================================
+-- 1. TOTAL CUSTOMERS
+-- Business Question:
+-- How many customers do we have?
+-- =====================================================
+
+SELECT
+    COUNT(*) AS total_customers
+FROM customers;
+
+-- =====================================================
+-- 2. ACTIVE VS INACTIVE CUSTOMERS
+-- Business Question:
+-- What is the distribution of customer status?
+-- =====================================================
+
+SELECT
+    customer_status,
+    COUNT(*) AS total_customers
+FROM customers
+GROUP BY customer_status
+ORDER BY total_customers DESC;
+
+-- =====================================================
+-- 3. CUSTOMERS BY MEMBERSHIP TIER
+-- Business Question:
+-- How are customers distributed across membership tiers?
+-- =====================================================
+
+SELECT
+    membership_tier,
+    COUNT(*) AS total_customers
+FROM customers
+GROUP BY membership_tier
+ORDER BY total_customers DESC;
+
+-- =====================================================
+-- 4. CUSTOMERS BY ACQUISITION CHANNEL
+-- Business Question:
+-- Which acquisition channels bring the most customers?
+-- =====================================================
+
+SELECT
+    acquisition_channel,
+    COUNT(*) AS total_customers
+FROM customers
+GROUP BY acquisition_channel
+ORDER BY total_customers DESC;
+
+-- =====================================================
+-- 5. CUSTOMERS BY PREFERRED CHANNEL
+-- Business Question:
+-- Which shopping channel do customers prefer?
+-- =====================================================
+
+SELECT
+    preferred_channel,
+    COUNT(*) AS total_customers
+FROM customers
+GROUP BY preferred_channel
+ORDER BY total_customers DESC;
+
+-- =====================================================
+-- 6. CUSTOMER DISTRIBUTION BY REGION
+-- Business Question:
+-- Which regions have the largest customer base?
+-- =====================================================
+
+SELECT
+    region,
+    COUNT(*) AS total_customers
+FROM customers
+GROUP BY region
+ORDER BY total_customers DESC;
+
+-- =====================================================
+-- 7. CUSTOMER DISTRIBUTION BY STATE
+-- Business Question:
+-- Which states have the most customers?
+-- =====================================================
+
+SELECT
+    state,
+    COUNT(*) AS total_customers
+FROM customers
+GROUP BY state
+ORDER BY total_customers DESC
+LIMIT 10;
+-- =====================================================
+-- 8. AVERAGE ORDERS PER CUSTOMER
+-- Business Question:
+-- On average, how many orders does each customer place?
+-- =====================================================
+
+SELECT
+    ROUND(COUNT(order_id) / COUNT(DISTINCT customer_id), 2) AS average_orders_per_customer
+FROM orders;
+
+-- =====================================================
+-- 9. AVERAGE SPEND PER CUSTOMER
+-- Business Question:
+-- On average, how much does each customer spend?
+-- =====================================================
+
+SELECT
+    ROUND(SUM(total_amount) / COUNT(DISTINCT customer_id), 2) AS average_spend_per_customer
+FROM orders;
+
+-- =====================================================
+-- 10. TOP 10 HIGHEST SPENDING CUSTOMERS
+-- Business Question:
+-- Who are our most valuable customers?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    ROUND(SUM(o.total_amount), 2) AS total_spent
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, customer_name
+ORDER BY total_spent DESC
+LIMIT 10;
+
+-- =====================================================
+-- 11. REPEAT VS ONE-TIME CUSTOMERS
+-- Business Question:
+-- How many customers purchased once vs multiple times?
+-- =====================================================
+
+SELECT
+    CASE
+        WHEN total_orders = 1 THEN 'One-Time Customer'
+        ELSE 'Repeat Customer'
+    END AS customer_type,
+    COUNT(*) AS total_customers
+FROM
+(
+    SELECT
+        customer_id,
+        COUNT(order_id) AS total_orders
+    FROM orders
+    GROUP BY customer_id
+) customer_orders
+GROUP BY customer_type;
+
+-- =====================================================
+-- 12. TOP 10 MOST FREQUENT CUSTOMERS
+-- Business Question:
+-- Which customers place the most orders?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    COUNT(o.order_id) AS total_orders
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, customer_name
+ORDER BY total_orders DESC
+LIMIT 10;
+
+-- =====================================================
+-- 13. CUSTOMER LIFETIME VALUE (CLV)
+-- Business Question:
+-- What is the total revenue generated by each customer?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+    COUNT(o.order_id) AS total_orders,
+    ROUND(SUM(o.total_amount), 2) AS customer_lifetime_value
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, customer_name
+ORDER BY customer_lifetime_value DESC;
+
+-- =====================================================
+-- 14. CUSTOMER RANKING BY LIFETIME VALUE
+-- Business Question:
+-- Rank customers based on total lifetime value.
+-- =====================================================
+
+SELECT
+    customer_id,
+    customer_name,
+    customer_lifetime_value,
+    RANK() OVER (
+        ORDER BY customer_lifetime_value DESC
+    ) AS customer_rank
+FROM
+(
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name, ' ', c.last_name) AS customer_name,
+        ROUND(SUM(o.total_amount), 2) AS customer_lifetime_value
+    FROM customers c
+    JOIN orders o
+    ON c.customer_id = o.customer_id
+    GROUP BY c.customer_id, customer_name
+) ranked_customers;
+-- =====================================================
+-- 15. CUSTOMER SEGMENTATION BY LIFETIME VALUE
+-- Business Question:
+-- Classify customers based on total spending.
+-- =====================================================
+
+SELECT
+    customer_id,
+    customer_name,
+    customer_lifetime_value,
+
+    CASE
+        WHEN customer_lifetime_value >= 50000 THEN 'High Value'
+        WHEN customer_lifetime_value >= 25000 THEN 'Medium Value'
+        ELSE 'Low Value'
+    END AS customer_segment
+
+FROM
+(
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+        SUM(o.total_amount) AS customer_lifetime_value
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+    GROUP BY c.customer_id, customer_name
+) t
+ORDER BY customer_lifetime_value DESC;
+
+-- =====================================================
+-- 16. NUMBER OF CUSTOMERS IN EACH SEGMENT
+-- Business Question:
+-- How many customers belong to each segment?
+-- =====================================================
+
+SELECT
+    customer_segment,
+    COUNT(*) AS total_customers
+
+FROM
+(
+    SELECT
+        CASE
+            WHEN SUM(o.total_amount) >= 50000 THEN 'High Value'
+            WHEN SUM(o.total_amount) >= 25000 THEN 'Medium Value'
+            ELSE 'Low Value'
+        END AS customer_segment
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+    GROUP BY c.customer_id
+) t
+
+GROUP BY customer_segment
+ORDER BY total_customers DESC;
+
+-- =====================================================
+-- 17. REVENUE CONTRIBUTION BY CUSTOMER SEGMENT
+-- Business Question:
+-- Which customer segment contributes the most revenue?
+-- =====================================================
+
+SELECT
+    customer_segment,
+    ROUND(SUM(customer_lifetime_value),2) AS total_revenue
+
+FROM
+(
+    SELECT
+
+        CASE
+            WHEN SUM(o.total_amount) >= 50000 THEN 'High Value'
+            WHEN SUM(o.total_amount) >= 25000 THEN 'Medium Value'
+            ELSE 'Low Value'
+        END AS customer_segment,
+
+        SUM(o.total_amount) AS customer_lifetime_value
+
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+
+    GROUP BY c.customer_id
+
+) t
+
+GROUP BY customer_segment
+ORDER BY total_revenue DESC;
+
+-- =====================================================
+-- 18. TOP 20 VIP CUSTOMERS
+-- Business Question:
+-- Identify our highest-value customers.
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+    ROUND(SUM(o.total_amount),2) AS total_spent
+
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+
+GROUP BY c.customer_id, customer_name
+
+ORDER BY total_spent DESC
+
+LIMIT 20;
+
+-- =====================================================
+-- 19. CUSTOMERS WITH LOW PURCHASE FREQUENCY
+-- Business Question:
+-- Which customers have placed only one order?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+    COUNT(o.order_id) AS total_orders
+
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+
+GROUP BY c.customer_id, customer_name
+
+HAVING COUNT(o.order_id) = 1;
+
+-- =====================================================
+-- 20. HIGH VALUE BUT LOW FREQUENCY CUSTOMERS
+-- Business Question:
+-- Which customers spend a lot but purchase infrequently?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+    COUNT(o.order_id) AS total_orders,
+    ROUND(SUM(o.total_amount),2) AS total_spent
+
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+
+GROUP BY c.customer_id, customer_name
+
+HAVING COUNT(o.order_id) <= 2
+AND SUM(o.total_amount) > 30000
+
+ORDER BY total_spent DESC;
+-- =====================================================
+-- 21. RFM BASE TABLE
+-- Business Question:
+-- Calculate Recency, Frequency and Monetary value
+-- for every customer.
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+
+    DATEDIFF(
+        (SELECT MAX(order_date) FROM orders),
+        MAX(o.order_date)
+    ) AS recency_days,
+
+    COUNT(o.order_id) AS frequency,
+
+    ROUND(SUM(o.total_amount),2) AS monetary_value
+
+FROM customers c
+
+JOIN orders o
+ON c.customer_id = o.customer_id
+
+GROUP BY c.customer_id, customer_name
+
+ORDER BY monetary_value DESC;
+
+-- =====================================================
+-- 22. TOP 20 MOST RECENT CUSTOMERS
+-- Business Question:
+-- Which customers purchased most recently?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+    MAX(o.order_date) AS last_purchase_date
+
+FROM customers c
+
+JOIN orders o
+ON c.customer_id=o.customer_id
+
+GROUP BY c.customer_id, customer_name
+
+ORDER BY last_purchase_date DESC
+
+LIMIT 20;
+
+-- =====================================================
+-- 23. TOP 20 HIGHEST FREQUENCY CUSTOMERS
+-- Business Question:
+-- Which customers purchase most frequently?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+    COUNT(o.order_id) AS total_orders
+
+FROM customers c
+
+JOIN orders o
+ON c.customer_id=o.customer_id
+
+GROUP BY c.customer_id, customer_name
+
+ORDER BY total_orders DESC
+
+LIMIT 20;
+
+-- =====================================================
+-- 24. TOP 20 HIGHEST MONETARY CUSTOMERS
+-- Business Question:
+-- Which customers generate the most revenue?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+    ROUND(SUM(o.total_amount),2) AS lifetime_value
+
+FROM customers c
+
+JOIN orders o
+ON c.customer_id=o.customer_id
+
+GROUP BY c.customer_id, customer_name
+
+ORDER BY lifetime_value DESC
+
+LIMIT 20;
+
+-- =====================================================
+-- 25. RFM CUSTOMER SEGMENTS
+-- Business Question:
+-- Categorize customers based on Recency,
+-- Frequency and Monetary value.
+-- =====================================================
+
+SELECT
+    customer_id,
+    customer_name,
+    recency_days,
+    frequency,
+    monetary_value,
+
+    CASE
+
+        WHEN recency_days <= 30
+             AND frequency >= 10
+             AND monetary_value >= 50000
+        THEN 'Champion'
+
+        WHEN recency_days <= 60
+             AND frequency >= 7
+        THEN 'Loyal Customer'
+
+        WHEN recency_days <= 90
+             AND frequency >= 4
+        THEN 'Potential Loyalist'
+
+        WHEN recency_days > 180
+        THEN 'At Risk'
+
+        ELSE 'Regular Customer'
+
+    END AS customer_segment
+
+FROM
+(
+    SELECT
+
+        c.customer_id,
+
+        CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+
+        DATEDIFF(
+            (SELECT MAX(order_date) FROM orders),
+            MAX(o.order_date)
+        ) AS recency_days,
+
+        COUNT(o.order_id) AS frequency,
+
+        ROUND(SUM(o.total_amount),2) AS monetary_value
+
+    FROM customers c
+
+    JOIN orders o
+    ON c.customer_id=o.customer_id
+
+    GROUP BY c.customer_id, customer_name
+
+) rfm_data
+
+ORDER BY monetary_value DESC;
+
+-- =====================================================
+-- 26. NUMBER OF CUSTOMERS IN EACH RFM SEGMENT
+-- Business Question:
+-- How many customers belong to each RFM segment?
+-- =====================================================
+
+SELECT
+    customer_segment,
+    COUNT(*) AS total_customers
+
+FROM
+(
+    SELECT
+
+        CASE
+
+            WHEN DATEDIFF(
+                    (SELECT MAX(order_date) FROM orders),
+                    MAX(o.order_date)
+                 ) <= 30
+                 AND COUNT(o.order_id) >= 10
+                 AND SUM(o.total_amount) >= 50000
+            THEN 'Champion'
+
+            WHEN DATEDIFF(
+                    (SELECT MAX(order_date) FROM orders),
+                    MAX(o.order_date)
+                 ) <= 60
+                 AND COUNT(o.order_id) >= 7
+            THEN 'Loyal Customer'
+
+            WHEN DATEDIFF(
+                    (SELECT MAX(order_date) FROM orders),
+                    MAX(o.order_date)
+                 ) <= 90
+                 AND COUNT(o.order_id) >= 4
+            THEN 'Potential Loyalist'
+
+            WHEN DATEDIFF(
+                    (SELECT MAX(order_date) FROM orders),
+                    MAX(o.order_date)
+                 ) > 180
+            THEN 'At Risk'
+
+            ELSE 'Regular Customer'
+
+        END AS customer_segment
+
+    FROM customers c
+
+    JOIN orders o
+    ON c.customer_id=o.customer_id
+
+    GROUP BY c.customer_id
+
+) segments
+
+GROUP BY customer_segment
+
+ORDER BY total_customers DESC;
+-- =====================================================
+-- 27. MONTHLY NEW CUSTOMERS
+-- Business Question:
+-- How many new customers joined each month?
+-- =====================================================
+
+SELECT
+    YEAR(join_date) AS year,
+    MONTHNAME(join_date) AS month,
+    COUNT(*) AS new_customers
+FROM customers
+GROUP BY YEAR(join_date), MONTH(join_date), MONTHNAME(join_date)
+ORDER BY YEAR(join_date), MONTH(join_date);
+
+-- =====================================================
+-- 28. ACTIVE VS INACTIVE CUSTOMER PERCENTAGE
+-- Business Question:
+-- What percentage of customers are active vs inactive?
+-- =====================================================
+
+SELECT
+    customer_status,
+    COUNT(*) AS total_customers,
+    ROUND(
+        COUNT(*) * 100.0 /
+        (SELECT COUNT(*) FROM customers),
+        2
+    ) AS percentage
+FROM customers
+GROUP BY customer_status;
+
+-- =====================================================
+-- 29. CUSTOMERS WITH NO ORDERS IN LAST 180 DAYS
+-- Business Question:
+-- Which customers have not purchased recently?
+-- =====================================================
+
+SELECT
+    c.customer_id,
+    CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+    MAX(o.order_date) AS last_purchase_date,
+    DATEDIFF(
+        (SELECT MAX(order_date) FROM orders),
+        MAX(o.order_date)
+    ) AS days_since_last_purchase
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+GROUP BY c.customer_id, customer_name
+HAVING days_since_last_purchase > 180
+ORDER BY days_since_last_purchase DESC;
+
+-- =====================================================
+-- 30. CUSTOMER RETENTION SUMMARY
+-- Business Question:
+-- How many customers are active vs at risk?
+-- =====================================================
+
+SELECT
+    CASE
+        WHEN DATEDIFF(
+            (SELECT MAX(order_date) FROM orders),
+            MAX(o.order_date)
+        ) <= 180
+        THEN 'Retained'
+        ELSE 'At Risk'
+    END AS customer_status,
+
+    COUNT(*) AS total_customers
+
+FROM customers c
+JOIN orders o
+ON c.customer_id = o.customer_id
+
+GROUP BY c.customer_id
+ORDER BY total_customers DESC;
+
+-- =====================================================
+-- 31. TOP 20 LONGEST RETAINED CUSTOMERS
+-- Business Question:
+-- Which customers have been with us the longest?
+-- =====================================================
+
+SELECT
+    customer_id,
+    CONCAT(first_name,' ',last_name) AS customer_name,
+    join_date,
+    DATEDIFF(CURDATE(), join_date) AS days_with_company
+FROM customers
+ORDER BY days_with_company DESC
+LIMIT 20;
+
+-- =====================================================
+-- 32. CUSTOMER CHURN RISK SUMMARY
+-- Business Question:
+-- Categorise customers based on inactivity.
+-- =====================================================
+
+SELECT
+    churn_risk,
+    COUNT(*) AS total_customers
+FROM
+(
+    SELECT
+        CASE
+            WHEN DATEDIFF(
+                (SELECT MAX(order_date) FROM orders),
+                MAX(o.order_date)
+            ) <= 30 THEN 'Low Risk'
+
+            WHEN DATEDIFF(
+                (SELECT MAX(order_date) FROM orders),
+                MAX(o.order_date)
+            ) <= 90 THEN 'Medium Risk'
+
+            WHEN DATEDIFF(
+                (SELECT MAX(order_date) FROM orders),
+                MAX(o.order_date)
+            ) <= 180 THEN 'High Risk'
+
+            ELSE 'Likely Churned'
+        END AS churn_risk
+
+    FROM customers c
+    JOIN orders o
+    ON c.customer_id = o.customer_id
+
+    GROUP BY c.customer_id
+) t
+
+GROUP BY churn_risk
+ORDER BY total_customers DESC;
+-- =====================================================
+-- 33. TOP 10 CUSTOMERS BY LIFETIME VALUE (ROW_NUMBER)
+-- Business Question:
+-- Assign a unique rank to customers based on spending.
+-- =====================================================
+
+WITH customer_clv AS
+(
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+        ROUND(SUM(o.total_amount),2) AS lifetime_value
+
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+
+    GROUP BY c.customer_id, customer_name
+)
+
+SELECT
+    ROW_NUMBER() OVER(ORDER BY lifetime_value DESC) AS row_num,
+    customer_id,
+    customer_name,
+    lifetime_value
+FROM customer_clv
+LIMIT 10;
+
+-- =====================================================
+-- 34. CUSTOMER RANKING (RANK)
+-- Business Question:
+-- Rank customers by lifetime value.
+-- =====================================================
+
+WITH customer_clv AS
+(
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+        ROUND(SUM(o.total_amount),2) AS lifetime_value
+
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+
+    GROUP BY c.customer_id, customer_name
+)
+
+SELECT
+    RANK() OVER(ORDER BY lifetime_value DESC) AS customer_rank,
+    customer_id,
+    customer_name,
+    lifetime_value
+FROM customer_clv
+LIMIT 20;
+
+-- =====================================================
+-- 35. CUSTOMER RANKING (DENSE_RANK)
+-- Business Question:
+-- Rank customers without gaps in ranking.
+-- =====================================================
+
+WITH customer_clv AS
+(
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+        ROUND(SUM(o.total_amount),2) AS lifetime_value
+
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+
+    GROUP BY c.customer_id, customer_name
+)
+
+SELECT
+    DENSE_RANK() OVER(ORDER BY lifetime_value DESC) AS customer_rank,
+    customer_id,
+    customer_name,
+    lifetime_value
+FROM customer_clv
+LIMIT 20;
+
+-- =====================================================
+-- 36. TOP 10% CUSTOMERS BY LIFETIME VALUE
+-- Business Question:
+-- Identify the highest-value customer group.
+-- =====================================================
+
+WITH customer_clv AS
+(
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+        ROUND(SUM(o.total_amount),2) AS lifetime_value,
+
+        NTILE(10) OVER
+        (
+            ORDER BY SUM(o.total_amount) DESC
+        ) AS customer_decile
+
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+
+    GROUP BY c.customer_id, customer_name
+)
+
+SELECT *
+FROM customer_clv
+WHERE customer_decile = 1;
+
+-- =====================================================
+-- 37. CUMULATIVE CUSTOMER REVENUE
+-- Business Question:
+-- Calculate running revenue across customers.
+-- =====================================================
+
+WITH customer_sales AS
+(
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+        ROUND(SUM(o.total_amount),2) AS revenue
+
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+
+    GROUP BY c.customer_id, customer_name
+)
+
+SELECT
+    customer_id,
+    customer_name,
+    revenue,
+
+    SUM(revenue) OVER
+    (
+        ORDER BY revenue DESC
+    ) AS cumulative_revenue
+
+FROM customer_sales;
+
+-- =====================================================
+-- 38. CUSTOMER REVENUE PERCENTAGE
+-- Business Question:
+-- What percentage of total revenue
+-- does each customer contribute?
+-- =====================================================
+
+WITH customer_sales AS
+(
+    SELECT
+        c.customer_id,
+        CONCAT(c.first_name,' ',c.last_name) AS customer_name,
+        SUM(o.total_amount) AS revenue
+
+    FROM customers c
+    JOIN orders o
+        ON c.customer_id = o.customer_id
+
+    GROUP BY c.customer_id, customer_name
+)
+
+SELECT
+    customer_id,
+    customer_name,
+    ROUND(revenue,2) AS revenue,
+
+    ROUND
+    (
+        revenue * 100 /
+        SUM(revenue) OVER(),
+        2
+    ) AS revenue_percentage
+
+FROM customer_sales
+
+ORDER BY revenue DESC;

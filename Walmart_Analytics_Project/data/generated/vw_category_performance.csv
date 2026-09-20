@@ -1,0 +1,13 @@
+department,brand,category_revenue,units_sold,orders_count
+Electronics,Apple,36800328.93,20621,7568
+Electronics,LG,37206539.24,20298,7480
+Electronics,Samsung,36196690.00,20398,7479
+Electronics,Sony,35029101.17,19329,7193
+Fashion,Adidas,47293208.08,26081,9394
+Fashion,Nike,47894121.73,26624,9578
+Fashion,Puma,48300788.05,26936,9681
+Groceries,Amul,74278694.67,40140,13618
+Groceries,Britannia,77219550.32,41955,14157
+Home,IKEA,44701325.35,25633,9269
+Home,LG,48062250.24,25368,9117
+Home,Sony,48124401.50,26391,9429
