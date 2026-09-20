@@ -1,1 +1,0 @@
-Run: python3 generate_products.py
